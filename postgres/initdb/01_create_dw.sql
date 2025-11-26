@@ -1,0 +1,2 @@
+CREATE DATABASE hg_dw OWNER hg_user;
+GRANT ALL PRIVILEGES ON DATABASE hg_dw TO hg_user;

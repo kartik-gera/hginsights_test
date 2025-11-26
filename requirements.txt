@@ -1,0 +1,15 @@
+dagster
+
+# Dagster webserver and Postgres integration
+dagster-webserver
+dagster-postgres
+
+# Database and data science
+psycopg2-binary
+pandas
+
+# dbt for Postgres
+dbt-postgres
+
+# For loading .env files
+python-dotenv

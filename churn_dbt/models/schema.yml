@@ -1,0 +1,83 @@
+version: 2
+
+models:
+  - name: stg_customers_churn_clean
+    description: "Cleaned staging table for customer churn."
+    columns:
+      - name: customer_id
+        tests:
+          - not_null
+          - unique
+
+  - name: churn_summary_by_contract
+    description: "Churn KPIs aggregated by contract type."
+    columns:
+      - name: contract_type
+        tests:
+          - not_null
+
+  - name: churn_summary_by_internet_service
+    description: "Churn KPIs aggregated by internet service type."
+    columns:
+      - name: internet_service
+        tests:
+          - not_null
+
+  - name: churn_summary_by_contract_and_techsupport
+    description: "Churn KPIs aggregated by contract type and TechSupport flag."
+    columns:
+      - name: contract_type
+        tests:
+          - not_null
+      - name: tech_support
+        tests:
+          - not_null
+
+  - name: churn_summary_by_tenure_segment
+    description: "Churn KPIs aggregated by tenure segments."
+    columns:
+      - name: tenure_segment
+        tests:
+          - not_null
+  
+  - name: churn_summary_by_gender
+    description: "Churn KPIs aggregated by customer gender."
+    columns:
+      - name: gender
+        description: "Customer gender bucket (from cleaned staging)."
+        tests:
+          - not_null
+      - name: total_customers
+        description: "Total number of customers in this gender group."
+      - name: churned_customers
+        description: "Number of customers who churned in this gender group."
+      - name: churn_rate
+        description: "Churned_customers / total_customers for this gender group."
+
+  - name: churn_summary_by_monthly_charge_bucket
+    description: "Churn KPIs aggregated by monthly charge bucket."
+    columns:
+      - name: charge_bucket
+        description: "Bucketed monthly_charges (e.g. <30, 30–60, 61–90, >90)."
+        tests:
+          - not_null
+      - name: total_customers
+        description: "Total number of customers in this price bucket."
+      - name: churned_customers
+        description: "Number of customers who churned in this price bucket."
+      - name: churn_rate
+        description: "Churned_customers / total_customers for this price bucket."
+
+  - name: churn_summary_by_age_segment
+    description: "Churn KPIs aggregated by age segments."
+    columns:
+      - name: age_segment
+        description: "Bucketed age group (e.g. <25, 25–34, 35–49, 50–64, 65+)."
+        tests:
+          - not_null
+      - name: total_customers
+        description: "Total number of customers in this age segment."
+      - name: churned_customers
+        description: "Number of customers who churned in this age segment."
+      - name: churn_rate
+        description: "Churned_customers / total_customers for this age segment."
