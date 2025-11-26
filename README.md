@@ -15,7 +15,7 @@ This project implements a scalable, ELT pipeline for customer churn analytics us
 - **Docker Compose**: Container orchestration for all services.
 
 
-## ![Project Architecture](architecture.png)
+## ![Project Architecture](Architecture.png)
 
 ---
 
@@ -84,6 +84,7 @@ This project implements a scalable, ELT pipeline for customer churn analytics us
 ├── requirements.txt                 # Python dependencies
 ├── .env                             # Environment variables
 ├── README.md                        # Project documentation
+├── Architecture.png                 # Architecture Flowchart
 ├── hg_repo/                         # Dagster repository: assets, jobs, sensors
     ├── config.py                    # Env loader + DB connection helper
     ├── jobs.py                      # Dagster job + schedule
